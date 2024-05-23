@@ -60,9 +60,13 @@ WORKDIR /app
 # Copy everything needed to run the app from the "build" stage.
 COPY --from=build /app .
 
+RUN ls -l
+
 # Switch to a non-privileged user (defined in the base image) that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
 # and https://github.com/dotnet/dotnet-docker/discussions/4764
 USER $APP_UID
+
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "SCHALE.GameServer.dll"]
