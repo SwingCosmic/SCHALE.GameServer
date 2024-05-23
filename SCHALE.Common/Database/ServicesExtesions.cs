@@ -16,5 +16,17 @@ namespace SCHALE.Common.Database
                 .UseLazyLoadingProxies();
             }, ServiceLifetime.Singleton, ServiceLifetime.Singleton);
         }
+        
+        public static void AddMySQLProvider(this IServiceCollection services, string connectionString)
+        {
+            services.AddDbContext<SCHALEContext>(o =>
+            {
+                o.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b =>
+                {
+                    b.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                })
+                .UseLazyLoadingProxies();
+            }, ServiceLifetime.Singleton, ServiceLifetime.Singleton);
+        }
     }
 }

@@ -37,34 +37,34 @@ namespace SCHALE.Common.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ServerId"));
 
                     b.Property<DateTime?>("BirthDay")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("CallName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<DateTime>("CallNameUpdateTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("DevId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<long>("Exp")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("LastConnectTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("LinkRewardDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<int>("LobbyMode")
                         .HasColumnType("int");
@@ -73,7 +73,7 @@ namespace SCHALE.Common.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Nickname")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<long>("PublisherAccountId")
                         .HasColumnType("bigint");
@@ -111,11 +111,11 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("EquipmentServerIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("EquipmentSlotAndDBIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<int>("ExSkillLevel")
                         .HasColumnType("int");
@@ -149,7 +149,7 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("PotentialStats")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<int>("PublicSkillLevel")
                         .HasColumnType("int");
@@ -192,15 +192,15 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("MainSlotServerIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("SkillCardMulliganCharacterIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("SupportSlotServerIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<long>("TSSInteractionServerId")
                         .HasColumnType("bigint");
@@ -261,10 +261,10 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("ProgressParameters")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.HasKey("ServerId");
 
@@ -280,7 +280,7 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("TutorialIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.HasKey("AccountServerId");
 
@@ -297,11 +297,11 @@ namespace SCHALE.Common.Migrations
 
                     b.Property<string>("DeviceId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(500)");
 
                     b.HasKey("Uid");
 

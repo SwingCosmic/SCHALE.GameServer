@@ -17,7 +17,7 @@ namespace SCHALE.Common.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "RaidInfo",
                 table: "Accounts",
-                type: "nvarchar(max)",
+                type: "varchar(500)",
                 nullable: false,
                 defaultValue: "");
         }

@@ -31,9 +31,9 @@ namespace SCHALE.Common.Migrations
                     IsNew = table.Column<bool>(type: "bit", nullable: false),
                     IsLocked = table.Column<bool>(type: "bit", nullable: false),
                     IsFavorite = table.Column<bool>(type: "bit", nullable: false),
-                    EquipmentServerIds = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PotentialStats = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EquipmentSlotAndDBIds = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    EquipmentServerIds = table.Column<string>(type: "varchar(500)", nullable: false),
+                    PotentialStats = table.Column<string>(type: "varchar(500)", nullable: false),
+                    EquipmentSlotAndDBIds = table.Column<string>(type: "varchar(500)", nullable: false)
                 },
                 constraints: table =>
                 {

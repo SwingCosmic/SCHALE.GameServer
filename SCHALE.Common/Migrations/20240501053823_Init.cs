@@ -17,25 +17,25 @@ namespace SCHALE.Common.Migrations
                 {
                     ServerId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nickname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CallName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DevId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nickname = table.Column<string>(type: "varchar(500)", nullable: true),
+                    CallName = table.Column<string>(type: "varchar(500)", nullable: true),
+                    DevId = table.Column<string>(type: "varchar(500)", nullable: true),
                     State = table.Column<int>(type: "int", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false),
                     Exp = table.Column<long>(type: "bigint", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comment = table.Column<string>(type: "varchar(500)", nullable: true),
                     LobbyMode = table.Column<int>(type: "int", nullable: false),
                     RepresentCharacterServerId = table.Column<int>(type: "int", nullable: false),
                     MemoryLobbyUniqueId = table.Column<long>(type: "bigint", nullable: false),
-                    LastConnectTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BirthDay = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CallNameUpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastConnectTime = table.Column<DateTime>(type: "datetime", nullable: false),
+                    BirthDay = table.Column<DateTime>(type: "datetime", nullable: true),
+                    CallNameUpdateTime = table.Column<DateTime>(type: "datetime", nullable: false),
                     PublisherAccountId = table.Column<long>(type: "bigint", nullable: false),
                     RetentionDays = table.Column<int>(type: "int", nullable: true),
                     VIPLevel = table.Column<int>(type: "int", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     UnReadMailCount = table.Column<int>(type: "int", nullable: true),
-                    LinkRewardDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    LinkRewardDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,7 +47,7 @@ namespace SCHALE.Common.Migrations
                 columns: table => new
                 {
                     AccountServerId = table.Column<long>(type: "bigint", nullable: false),
-                    TutorialIds = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TutorialIds = table.Column<string>(type: "varchar(500)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,8 +60,8 @@ namespace SCHALE.Common.Migrations
                 {
                     Uid = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DeviceId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DeviceId = table.Column<string>(type: "varchar(500)", nullable: false),
+                    Token = table.Column<string>(type: "varchar(500)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,8 +93,8 @@ namespace SCHALE.Common.Migrations
                     AccountServerId = table.Column<long>(type: "bigint", nullable: false),
                     MissionUniqueId = table.Column<long>(type: "bigint", nullable: false),
                     Complete = table.Column<bool>(type: "bit", nullable: false),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProgressParameters = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    StartTime = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ProgressParameters = table.Column<string>(type: "varchar(500)", nullable: false)
                 },
                 constraints: table =>
                 {

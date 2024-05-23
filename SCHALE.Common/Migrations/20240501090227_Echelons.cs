@@ -21,11 +21,11 @@ namespace SCHALE.Common.Migrations
                     EchelonNumber = table.Column<long>(type: "bigint", nullable: false),
                     ExtensionType = table.Column<int>(type: "int", nullable: false),
                     LeaderServerId = table.Column<long>(type: "bigint", nullable: false),
-                    MainSlotServerIds = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SupportSlotServerIds = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MainSlotServerIds = table.Column<string>(type: "varchar(500)", nullable: false),
+                    SupportSlotServerIds = table.Column<string>(type: "varchar(500)", nullable: false),
                     TSSInteractionServerId = table.Column<long>(type: "bigint", nullable: false),
                     UsingFlag = table.Column<int>(type: "int", nullable: false),
-                    SkillCardMulliganCharacterIds = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SkillCardMulliganCharacterIds = table.Column<string>(type: "varchar(500)", nullable: false)
                 },
                 constraints: table =>
                 {
