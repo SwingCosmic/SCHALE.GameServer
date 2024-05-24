@@ -29,6 +29,4 @@ ENV \
     LANG=en_US.UTF-8
 
 
-EXPOSE 80
-
 ENTRYPOINT ["dotnet", "SCHALE.GameServer.dll"]
