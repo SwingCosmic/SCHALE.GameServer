@@ -64,8 +64,12 @@ namespace SCHALE.GameServer
                 builder.Host.UseSerilog();
 
                 // Add services to the container.
-                //builder.Services.AddSQLServerProvider(config.GetConnectionString("SQLServer") ?? throw new ArgumentNullException("ConnectionStrings/SQLServer in appsettings is missing"));
-                builder.Services.AddMySQLProvider(config.GetConnectionString("MySQL") ?? throw new ArgumentNullException("ConnectionStrings/MySQL in appsettings is missing"));
+
+                var connstr = config.GetConnectionString("MySQL") ?? throw new ArgumentNullException("ConnectionStrings/MySQL in appsettings is missing");
+                Log.Information($"Using connection string: {connstr}");
+                
+                //builder.Services.AddSQLServerProvider(connstr);
+                builder.Services.AddMySQLProvider(connstr);
                 builder.Services.AddControllers();
                 builder.Services.AddProtocolHandlerFactory();
                 builder.Services.AddMemorySessionKeyService();
